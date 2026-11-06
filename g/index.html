@@ -46,7 +46,11 @@ p{margin:0 0 20px;color:var(--text2)}
   var verse = ok(q.get('v'), /^\d{1,2}\.\d{1,2}$/);
   var lang = ok(q.get('l'), /^[a-z]{2}(-[A-Za-z]{4})?$/);
   var morning = q.get('m') === '1';
-  var ref = 'utm_source=whatsapp&utm_medium=share' + (verse ? '&utm_content=' + verse : '') + (lang ? '&gs_lang=' + lang : '') + (morning ? '&gs_morning=1' : '');
+  // ?s= names where a link that isn't a share caption was put: poster, card (table card), channel, yt, fb, film.
+  var SOURCES = { poster: 'offline', card: 'offline', channel: 'social', yt: 'social', fb: 'social', film: 'social' };
+  var src = ok(q.get('s'), /^[a-z]{2,10}$/);
+  var medium = src && SOURCES[src] ? SOURCES[src] : null;
+  var ref = (medium ? 'utm_source=' + src + '&utm_medium=' + medium : 'utm_source=whatsapp&utm_medium=share') + (verse ? '&utm_content=' + verse : '') + (lang ? '&gs_lang=' + lang : '') + (morning ? '&gs_morning=1' : '');
   var play = 'https://play.google.com/store/apps/details?id=com.gitascroll.app&referrer=' + encodeURIComponent(ref);
   document.getElementById('play').href = play;
   var ua = navigator.userAgent || '';
