@@ -30,6 +30,13 @@ p{margin:0 0 20px;color:var(--text2)}
 .btn{display:block;width:100%;padding:16px;border-radius:14px;background:var(--btn);color:var(--btnText);font-weight:600;font-size:19px;text-decoration:none;margin:0 0 12px}
 .note{font-size:15px}
 #status{min-height:1.6em}
+.badges { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; }
+.badge { display: block; line-height: 0; border-radius: 9px; }
+.badge img { display: block; height: 52px; width: auto; }
+.badge.play img { height: 81px; margin: -14.5px -14.6px; }
+.badge:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+.soon { font-size: 15px; color: var(--text2); border: 1px dashed var(--text2); border-radius: 10px; padding: 12px 16px; line-height: 1.3; }
+.badges{justify-content:center;margin:8px 0 12px}
 </style>
 </head>
 <body>
@@ -37,7 +44,7 @@ p{margin:0 0 20px;color:var(--text2)}
   <p class="mark">Gita Scroll</p>
   <h1>One verse of the Gita every morning, in your language</h1>
   <p class="hi" lang="hi">हर सुबह गीता का एक श्लोक, आपकी भाषा में</p>
-  <a id="play" class="btn" href="https://play.google.com/store/apps/details?id=com.gitascroll.app">Get it on Google Play</a>
+  <div class="badges"><a class="badge play" href="#"><img src="/assets/badge-google-play.png" alt="Get it on Google Play" width="646" height="250"></a><span class="soon">iPhone: coming soon</span></div>
   <p id="status" class="note"></p>
   <p class="note"><a href="../" style="color:var(--gold)">About Gita Scroll</a></p>
 </main>
@@ -54,7 +61,7 @@ p{margin:0 0 20px;color:var(--text2)}
   var medium = src && SOURCES[src] ? SOURCES[src] : null;
   var ref = (medium ? 'utm_source=' + src + '&utm_medium=' + medium : 'utm_source=whatsapp&utm_medium=share') + (verse ? '&utm_content=' + verse : '') + (lang ? '&gs_lang=' + lang : '') + (morning ? '&gs_morning=1' : '');
   var play = 'https://play.google.com/store/apps/details?id=com.gitascroll.app&referrer=' + encodeURIComponent(ref);
-  document.getElementById('play').href = play;
+  var badge = document.querySelector('.badge.play'); if (badge) badge.href = play;
   var ua = navigator.userAgent || '';
   if (/Android/i.test(ua)) {
     document.getElementById('status').textContent = 'Opening Google Play…';
