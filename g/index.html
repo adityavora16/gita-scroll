@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gita Scroll · गीता, आपकी भाषा में</title>
+<meta name="description" content="हर सुबह गीता का एक श्लोक, आपकी भाषा में। One verse of the Gita every morning, in your language. 12 Indian languages, free.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Gita Scroll">
+<meta property="og:title" content="Gita Scroll · गीता, आपकी भाषा में">
+<meta property="og:description" content="हर सुबह गीता का एक श्लोक, आपकी भाषा में। 12 भाषाएँ, मुफ़्त।">
+<meta property="og:image" content="https://adityavora16.github.io/gita-scroll/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#2a0d0f;--card:#3a1418;--text:#f6ead0;--text2:#d9c49a;--gold:#e2b35a;--btn:#e2b35a;--btnText:#2a0d0f}
+:root[data-theme="light"]{--bg:#fbf4e6;--card:#fff;--text:#2a0d0f;--text2:#6b4a2b;--gold:#9a6a1e;--btn:#7a1f24;--btnText:#fff}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:var(--bg);color:var(--text);font:18px/1.6 "Noto Sans Devanagari",-apple-system,"Segoe UI",Roboto,sans-serif;display:flex;align-items:center;justify-content:center}
+main{max-width:440px;width:100%;padding:32px 16px;text-align:center}
+.mark{color:var(--gold);font-weight:600;letter-spacing:.02em;font-size:20px;margin:0 0 20px}
+h1{font-size:28px;line-height:1.35;margin:0 0 8px;font-weight:600}
+p{margin:0 0 20px;color:var(--text2)}
+.btn{display:block;width:100%;padding:16px;border-radius:14px;background:var(--btn);color:var(--btnText);font-weight:600;font-size:19px;text-decoration:none;margin:0 0 12px}
+.note{font-size:15px}
+#status{min-height:1.6em}
+</style>
+</head>
+<body>
+<main>
+  <p class="mark">Gita Scroll</p>
+  <h1>हर सुबह गीता का एक श्लोक,<br>आपकी भाषा में</h1>
+  <p>One verse of the Gita every morning, in your language.</p>
+  <a id="play" class="btn" href="https://play.google.com/store/apps/details?id=com.gitascroll.app">Google Play से लें · Get it on Google Play</a>
+  <p id="status" class="note"></p>
+  <p class="note"><a href="../" style="color:var(--gold)">gitascroll · about</a></p>
+</main>
+<script>
+(function () {
+  var q = new URLSearchParams(location.search);
+  function ok(v, re) { return v && re.test(v) ? v : null; }
+  var verse = ok(q.get('v'), /^\d{1,2}\.\d{1,2}$/);
+  var lang = ok(q.get('l'), /^[a-z]{2}(-[A-Za-z]{4})?$/);
+  var morning = q.get('m') === '1';
+  var ref = 'utm_source=whatsapp&utm_medium=share' + (verse ? '&utm_content=' + verse : '') + (lang ? '&gs_lang=' + lang : '') + (morning ? '&gs_morning=1' : '');
+  var play = 'https://play.google.com/store/apps/details?id=com.gitascroll.app&referrer=' + encodeURIComponent(ref);
+  document.getElementById('play').href = play;
+  var ua = navigator.userAgent || '';
+  if (/Android/i.test(ua)) {
+    document.getElementById('status').textContent = 'Google Play खुल रहा है… Opening Google Play…';
+    location.replace(play);
+  } else if (/iPhone|iPad|iPod/i.test(ua)) {
+    document.getElementById('status').textContent = 'iPhone के लिए जल्द आ रहा है। Coming soon on iPhone.';
+  }
+})();
+</script>
+</body>
+</html>

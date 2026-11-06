@@ -1,0 +1,20 @@
+{
+ "padas": [
+  {
+   "start_ms": 57,
+   "end_ms": 2325
+  },
+  {
+   "start_ms": 2906,
+   "end_ms": 5693
+  },
+  {
+   "start_ms": 6375,
+   "end_ms": 8657
+  },
+  {
+   "start_ms": 9298,
+   "end_ms": 12237
+  }
+ ]
+}
