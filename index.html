@@ -1,65 +1,151 @@
 <!doctype html>
-<html lang="hi">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gita Scroll · गीता, आपकी भाषा में</title>
-<meta name="description" content="Gita Scroll: one verse of the Bhagavad Gita every morning, in your language. 12 Indian languages. Share it to WhatsApp in two taps. Free.">
+<title>Gita Scroll · One verse of the Gita every morning</title>
+<meta name="description" content="One verse of the Bhagavad Gita every morning, in your language, with the Sanskrit shlok above it. Send it to your family on WhatsApp in two taps. 12 Indian languages, free, no ads.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Gita Scroll">
-<meta property="og:title" content="Gita Scroll · गीता, आपकी भाषा में">
-<meta property="og:description" content="हर सुबह गीता का एक श्लोक, आपकी भाषा में। 12 भाषाएँ, मुफ़्त।">
+<meta property="og:title" content="Gita Scroll · One verse of the Gita every morning">
+<meta property="og:description" content="In your language, with the Sanskrit shlok above it. 12 Indian languages · free · no ads.">
 <meta property="og:image" content="https://gitascroll.in/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600&family=Noto+Serif:wght@600&family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#fbf4e6;--card:#fff;--text:#2a0d0f;--text2:#6b4a2b;--line:#ead9b8;--accent:#7a1f24;--btnText:#fff}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d0a0c;--card:#2a1013;--text:#f6ead0;--text2:#d0bb90;--line:#4a2228;--accent:#e2b35a;--btnText:#2a0d0f}}
-:root[data-theme="dark"]{--bg:#1d0a0c;--card:#2a1013;--text:#f6ead0;--text2:#d0bb90;--line:#4a2228;--accent:#e2b35a;--btnText:#2a0d0f}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font:18px/1.65 "Noto Sans Devanagari",-apple-system,"Segoe UI",Roboto,sans-serif}
-main{max-width:760px;margin:0 auto;padding:40px 16px 48px}
-.mark{color:var(--accent);font-weight:600;font-size:20px;margin:0 0 28px}
-.hero{display:grid;grid-template-columns:1fr 280px;gap:32px;align-items:center}
-@media (max-width:680px){.hero{grid-template-columns:1fr}.hero img{max-width:280px;margin:0 auto}}
-h1{font-size:34px;line-height:1.3;margin:0 0 12px;font-weight:600}
-.sub{color:var(--text2);margin:0 0 24px}
-.hero img{width:100%;border-radius:12px;display:block;box-shadow:0 12px 32px rgba(42,13,15,.25)}
-.btn{display:inline-block;padding:14px 22px;border-radius:14px;background:var(--accent);color:var(--btnText);font-weight:600;text-decoration:none}
-ul{padding:0;list-style:none;margin:40px 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
-li{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
-li b{display:block;font-weight:600}
-li span{color:var(--text2);font-size:16px}
-.langs{margin:28px 0 0;color:var(--text2);font-size:17px}
-footer{max-width:760px;margin:0 auto;padding:24px 16px 40px;border-top:1px solid var(--line);color:var(--text2);font-size:15px}
-footer a{color:var(--accent);margin-right:16px}
+:root {
+  --bg: #FBF6EC; --surface: #FFFFFF; --text: #2A0D0F; --text2: #6B4E3A; --line: #EADBC3;
+  --accent: #8E2A1C; --accent-text: #FFFFFF; --gold: #B7802A; --shadow: rgba(42, 13, 15, .18);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #170A0B; --surface: #22110F; --text: #F6EAD0; --text2: #CDB89A; --line: #3A2420;
+    --accent: #E2B35A; --accent-text: #241008; --gold: #E2B35A; --shadow: rgba(0, 0, 0, .5);
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #170A0B; --surface: #22110F; --text: #F6EAD0; --text2: #CDB89A; --line: #3A2420;
+  --accent: #E2B35A; --accent-text: #241008; --gold: #E2B35A; --shadow: rgba(0, 0, 0, .5);
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--text);
+  font: 18px/1.6 "Noto Sans", "Noto Sans Devanagari", -apple-system, "Segoe UI", Roboto, sans-serif; }
+a { color: inherit; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+header { padding: 28px 0 0; }
+.mark { font-weight: 600; font-size: 20px; color: var(--accent); text-decoration: none; letter-spacing: .01em; }
+
+.hero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 56px; align-items: center; padding: 48px 0 72px; }
+h1 { font-family: "Noto Serif", Georgia, serif; font-weight: 600; font-size: clamp(34px, 4.4vw, 48px); line-height: 1.15; margin: 0 0 20px; letter-spacing: -.01em; }
+.lede { font-size: 20px; color: var(--text2); margin: 0 0 32px; max-width: 34em; }
+.cta { display: inline-block; background: var(--accent); color: var(--accent-text); text-decoration: none; font-weight: 600;
+  padding: 16px 28px; border-radius: 14px; font-size: 18px; }
+.cta:hover { filter: brightness(1.08); }
+.meta { margin: 16px 0 0; font-size: 15px; color: var(--text2); }
+
+.fan { position: relative; width: 100%; max-width: 460px; aspect-ratio: 1 / 1.08; margin: 0 auto; }
+.fan img { position: absolute; width: 62%; aspect-ratio: 4 / 5; height: auto; border-radius: 14px; box-shadow: 0 18px 44px var(--shadow); display: block; }
+.fan .c1 { left: 0; top: 9%; transform: rotate(-8deg); }
+.fan .c2 { right: 0; top: 9%; transform: rotate(8deg); }
+.fan .c3 { left: 19%; top: 0; z-index: 2; }
+
+.features { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; padding: 0 0 56px; margin: 0; list-style: none; }
+.features li { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 20px; }
+.features b { display: block; font-size: 17px; margin-bottom: 6px; }
+.features span { color: var(--text2); font-size: 16px; line-height: 1.5; }
+
+.langs { border-top: 1px solid var(--line); padding: 40px 0 48px; }
+.langs h2 { font-size: 15px; font-weight: 600; color: var(--text2); margin: 0 0 16px; letter-spacing: .02em; }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.chips li { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 6px 16px; font-size: 17px; }
+
+footer { border-top: 1px solid var(--line); margin-top: 8px; color: var(--text2); font-size: 15px; }
+.foot { display: grid; grid-template-columns: minmax(0, 1.6fr) repeat(3, minmax(0, 1fr)); gap: 32px; padding-top: 40px; padding-bottom: 28px; }
+.foot .brand { font-family: "Noto Serif", Georgia, serif; font-weight: 600; font-size: 22px; color: var(--accent); margin: 0 0 8px; }
+.foot h3 { font-family: "Noto Serif", Georgia, serif; font-size: 16px; font-weight: 600; color: var(--text); margin: 4px 0 12px; }
+.foot ul { list-style: none; margin: 0; padding: 0; }
+.foot li { margin: 0 0 8px; }
+.foot a { text-decoration: none; }
+.foot a:hover { color: var(--accent); text-decoration: underline; }
+.foot p { margin: 0; max-width: 30em; line-height: 1.55; }
+.copy { border-top: 1px solid var(--line); padding-top: 16px; padding-bottom: 24px; margin: 0 auto; text-align: center; font-size: 14px; }
+.band { display: flex; height: 59px; background: #4A0E13; }
+.band img { height: 59px; width: 59px; display: block; flex: none; }
+.band div { flex: 1; background: url("band-tile.png") repeat-x left center / auto 59px; }
+@media (max-width: 860px) { .foot { grid-template-columns: repeat(3, minmax(0, 1fr)); } .foot > div:first-child { grid-column: 1 / -1; } }
+@media (max-width: 480px) { .foot { grid-template-columns: 1fr 1fr; } }
+
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; gap: 40px; padding: 32px 0 56px; }
+  .fan { max-width: 380px; }
+  .features { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 480px) {
+  .wrap { padding: 0 16px; }
+  .lede { font-size: 18px; }
+  .cta { display: block; text-align: center; }
+  .features { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
-<main>
-  <p class="mark">Gita Scroll</p>
-  <div class="hero">
+<header class="wrap"><a class="mark" href="./">Gita Scroll</a></header>
+<main class="wrap">
+  <section class="hero">
     <div>
-      <h1>हर सुबह गीता का एक श्लोक, आपकी भाषा में</h1>
-      <p class="sub">One verse of the Bhagavad Gita every morning, in your language, with the Sanskrit shlok above it. Send it to your family on WhatsApp in two taps.</p>
-      <a class="btn" href="g/">Google Play से लें · Get it on Google Play</a>
+      <h1>One verse of the Gita every morning, in your language</h1>
+      <p class="lede">The Sanskrit shlok on top, its meaning in your language below, and a beautiful card to send to your family on WhatsApp in two taps.</p>
+      <a class="cta" href="g/?s=site">Get it on Google Play</a>
+      <p class="meta">Free · No ads · Android now, iPhone soon</p>
     </div>
-    <img src="card.jpg" alt="A Gita Scroll verse card from the app: the Sanskrit shlok of Gita 2.47 with its meaning in Hindi, on the Peacock look." width="560" height="996">
-  </div>
-  <ul>
-    <li><b>आपकी भाषा</b><span>Your language first, the shlok above it</span></li>
-    <li><b>सुबह का श्लोक</b><span>A morning verse, ready for WhatsApp status and groups</span></li>
-    <li><b>सुनिए</b><span>Hear the shlok recited</span></li>
-    <li><b>मुफ़्त</b><span>The whole Gita, free, no ads</span></li>
+    <div class="fan" aria-label="Gita Scroll verse cards for Gita 2.47 in Gujarati, Hindi and English">
+      <img class="c1" src="card-gu.jpg" alt="" width="1080" height="1350">
+      <img class="c2" src="card-hi.jpg" alt="" width="1080" height="1350">
+      <img class="c3" src="card-en.jpg" alt="Gita 2.47 as a Gita Scroll morning card: the Sanskrit shlok with its meaning in English" width="1080" height="1350">
+    </div>
+  </section>
+
+  <ul class="features">
+    <li><b>Your language first</b><span>Pick one of 12 Indian languages. The shlok stays in Sanskrit above it.</span></li>
+    <li><b>A verse each morning</b><span>Ready for your WhatsApp status or the family group.</span></li>
+    <li><b>Hear it recited</b><span>Listen to the shlok in Sanskrit, line by line.</span></li>
+    <li><b>Free</b><span>The whole Gita. No ads, no account.</span></li>
   </ul>
-  <p class="langs">हिन्दी · Hinglish · English · ગુજરાતી · मराठी · বাংলা · தமிழ் · తెలుగు · ಕನ್ನಡ · മലയാളം · ਪੰਜਾਬੀ · ଓଡ଼ିଆ</p>
+
+  <section class="langs">
+    <h2>Read it in</h2>
+    <ul class="chips">
+      <li lang="en">English</li><li lang="hi">हिन्दी</li><li lang="hi-Latn">Hinglish</li><li lang="gu">ગુજરાતી</li>
+      <li lang="mr">मराठी</li><li lang="bn">বাংলা</li><li lang="ta">தமிழ்</li><li lang="te">తెలుగు</li>
+      <li lang="kn">ಕನ್ನಡ</li><li lang="ml">മലയാളം</li><li lang="pa">ਪੰਜਾਬੀ</li><li lang="or">ଓଡ଼ିଆ</li>
+    </ul>
+  </section>
 </main>
 <footer>
-  <a href="privacy.html">Privacy policy</a><a href="terms.html">Terms of use</a><a href="support.html">Support</a>
-  <p>Contact: <a href="mailto:adityavora16@gmail.com">adityavora16@gmail.com</a></p>
+  <div class="wrap foot">
+    <div>
+      <p class="brand">Gita Scroll</p>
+      <p>The Bhagavad Gita, one verse a day, in 12 Indian languages. Read it, hear it recited, and share it with the people you love.</p>
+    </div>
+    <div>
+      <h3>Get the app</h3>
+      <ul><li><a href="g/?s=site">Google Play</a></li><li>iPhone: coming soon</li></ul>
+    </div>
+    <div>
+      <h3>Help</h3>
+      <ul><li><a href="support.html">Support</a></li><li><a href="privacy.html">Privacy policy</a></li><li><a href="terms.html">Terms of use</a></li></ul>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <ul><li><a href="mailto:adityavora16@gmail.com">adityavora16@gmail.com</a></li></ul>
+    </div>
+  </div>
+  <p class="wrap copy">© 2026 Gita Scroll</p>
+  <div class="band" aria-hidden="true"><img src="band-l.png" alt=""><div></div><img src="band-r.png" alt=""></div>
 </footer>
 </body>
 </html>
