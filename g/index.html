@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Gita Scroll · One verse of the Gita every morning</title>
-<meta name="description" content="One verse of the Gita every morning, in your language, with the Sanskrit shlok above it. 12 Indian languages, free, no ads.">
+<meta name="description" content="One verse of the Gita every morning, in your language, with the Sanskrit shlok above it. 12 Indian languages, free.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Gita Scroll">
 <meta property="og:title" content="Gita Scroll · One verse of the Gita every morning">
-<meta property="og:description" content="In your language, with the Sanskrit shlok above it. 12 Indian languages · free · no ads.">
+<meta property="og:description" content="In your language, with the Sanskrit shlok above it. 12 Indian languages · free.">
 <meta property="og:image" content="https://gitascroll.in/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -60,7 +60,7 @@ p{margin:0 0 20px;color:var(--text2)}
   var src = ok(q.get('s'), /^[a-z]{2,10}$/);
   var medium = src && SOURCES[src] ? SOURCES[src] : null;
   var ref = (medium ? 'utm_source=' + src + '&utm_medium=' + medium : 'utm_source=whatsapp&utm_medium=share') + (verse ? '&utm_content=' + verse : '') + (lang ? '&gs_lang=' + lang : '') + (morning ? '&gs_morning=1' : '');
-  var play = 'https://play.google.com/store/apps/details?id=com.gitascroll.app&referrer=' + encodeURIComponent(ref);
+  var play = 'https://play.google.com/store/apps/details?id=in.gitascroll.app&referrer=' + encodeURIComponent(ref);
   var badge = document.querySelector('.badge.play'); if (badge) badge.href = play;
   var ua = navigator.userAgent || '';
   if (/Android/i.test(ua)) {
